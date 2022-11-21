@@ -1,0 +1,99 @@
+{
+  "Routes": [
+    //--------UserRequest-----------
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/login/login-user",
+      "DownstreamScheme": "https",
+      "ServiceName": "UserRequestService",
+      "UpstreamPathTemplate": "/api/gateway/login/login-user",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    //{
+    //  "UseServiceDiscovery": true,
+    //  "DownstreamPathTemplate": "/api/createbooks/createbooks",
+    //  "DownstreamScheme": "https",
+    //  "ServiceName": "UserRequestService",
+    //  "UpstreamPathTemplate": "/api/gateway/createbooks/createbooks",
+    //  "UpstreamHttpMethod": [ "Post" ]
+    //},
+
+    //--------------User--------------
+
+
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Login/get-user",
+      "DownstreamScheme": "https",
+      "ServiceName": "userService",
+      "UpstreamPathTemplate": "/api/gateway/getuser",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/login/login-user",
+      "DownstreamScheme": "https",
+      "ServiceName": "userService",
+      "UpstreamPathTemplate": "/api/gateway/login",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/ServiceRequests/searchuserrequests",
+      "DownstreamScheme": "https",
+      "ServiceName": "userrequestService",
+      "UpstreamPathTemplate": "/api/gateway/ServiceRequests/searchuserrequests",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/ServiceRequests",
+      "DownstreamScheme": "https",
+      "ServiceName": "userrequestService",
+      "UpstreamPathTemplate": "/api/gateway/ServiceRequests",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/ServiceRequests",
+      "DownstreamScheme": "https",
+      "ServiceName": "userrequestService",
+      "UpstreamPathTemplate": "/api/gateway/ServiceRequests",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/ServiceRequests",
+      "DownstreamScheme": "https",
+      "ServiceName": "userrequestService",
+      "UpstreamPathTemplate": "/api/gateway/ServiceRequests",
+      "w": null,
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/ServiceRequests",
+      "DownstreamScheme": "https",
+      "ServiceName": "userrequestService",
+      "UpstreamPathTemplate": "/api/gateway/ServiceRequests",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/ServiceRequests/updaterequestdatabyid",
+      "DownstreamScheme": "https",
+      "ServiceName": "userrequestService",
+      "UpstreamPathTemplate": "/api/gateway/ServiceRequests/updaterequestdatabyid",
+      "UpstreamHttpMethod": [ "Put" ]
+    }
+
+  ],
+  "GlobalConfiguration": {
+    "ServiceDiscoveryProvider": {
+      "Host": "localhost",
+      "Port": "8500",
+      "Type": "Consul"
+    }
+  }
+}
